@@ -1,8 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Controls = () => ();
+export default function Controls({ onChange, onSubmit }) {
+  return (
+    <form onSubmit={onSubmit}>
+      <label htmlFor="greetingField">Hi, my name is:</label>
+      <input
+        id="nameField"
+        name="nameField"
+        type="text"
+        onChange={(event) => onChange(event)}
+      />
+    </form>
+  );
+}
 
-Controls.propTypes = {};
-
-export default Controls;
+Controls.propTypes = {
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+};
